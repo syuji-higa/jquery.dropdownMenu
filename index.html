@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<title>ドロップダウンメニューを実現するjQueryプラグインのDEMO｜Web&nbsp;Mugen</title>
+<meta charset="utf-8">
+<meta name="description" content="ドロップダウンメニューを実現するjQueryプラグインのDEMOです。">
+<meta name="keywords" content="ドロップダウンメニュー,jQuery,JavaScript">
+<style>
+/*************************************************
+			= default
+*************************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, b, font, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+html { overflow-y: scroll; }
+body { color: #666; font: 14px Verdana, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, 'ＭＳ Ｐゴシック', sans-serif; }
+header, footer, nav, section, article { display: block; }
+table { border-collapse: collapse; border-spacing: 0; }
+ol, ul { list-style: none; }
+caption, th { text-align: left; }
+input, textarea { border: none; padding: 0; margin: 0; color: #666666; }
+hr { display: none; height: 0; margin: 0; padding: 0; }
+a { color: #666666; }
+a:hover { text-decoration: none; color: #999999; }
+/*************************************************
+			= common
+*************************************************/
+#contents { width: 800px; margin: 0 auto; }
+#wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4 { margin: 1em 0; font-weight: bold; }
+#wrapper h1 { font-size: 34px; }
+#wrapper h2 { font-size: 28px; }
+#wrapper h3 { font-size: 22px; }
+#wrapper h4 { font-size: 16px; }
+#wrapper p { margin-bottom: 1em;}
+/*************************************************
+			= page
+*************************************************/
+ul#dropdownmenu {
+	width: 100%;
+	*zoom: 1; /*forIE6,7*/
+}
+ul#dropdownmenu:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+ul#dropdownmenu li {
+	width: 100px;
+	float: left;
+	*zoom: 1; /*forIE6,7*/
+	white-space: nowrap;
+}
+ul#dropdownmenu li ul {
+	visibility: hidden;
+	position: absolute;
+}
+ul#dropdownmenu li:hover > ul {
+	visibility: visible;
+}
+ul#dropdownmenu li ul li {
+	width: auto !important;
+	width: 100px;
+	min-width: 100px;
+	clear: left;
+	position: relative;
+}
+ul#dropdownmenu li ul li ul {
+	top: 0;
+	left: 100%;
+}
+ul#dropdownmenu li a {
+	display: block;
+	background-color: #333;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	padding: 10px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+* html ul#dropdownmenu li a { /*forIE6*/
+	zoom: 1;
+}
+ul#dropdownmenu li a:hover {
+	background-color: #666;
+}
+ul#dropdownmenu li ul li a {
+	text-align: left;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<!--[if lte IE 8]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="jquery.dropdownMenu.js"></script>
+<script>
+jQuery(function($){
+	$('#dropdownmenu').dropdownMenu();
+});
+</script>
+</head>
+<body>
+
+<div id="wrapper">
+
+<section id="contents">
+
+<h1>Demo&nbsp;&#8211;&nbsp;ドロップダウンメニューを実現するjQueryプラグイン</h1>
+
+<ul id="dropdownmenu">
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキストテキストテキストテキストテキストテキストテキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">テキスト</a>
+<ul>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+<li><a href="#">テキスト</a></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+<!--/#wrapper--></div>
+
+</body>
+</html>

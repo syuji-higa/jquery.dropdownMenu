@@ -19,8 +19,8 @@
 		}, option);
 
 		var $wrap = $(this),
-			$li   = $wrap.find('li'),
-			$ul   = $li.find('ul');
+		    $li   = $wrap.find('li'),
+		    $ul   = $li.find('ul');
 
 		/* ==============================
 			first ran

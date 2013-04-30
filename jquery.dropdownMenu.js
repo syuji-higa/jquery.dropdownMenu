@@ -1,7 +1,19 @@
+/*!
+ * jquery.dropdownMenu.js
+ *
+ * @version   : 1.0.0
+ * @author    : syuji-higa
+ * @copyright : Web Mugen (http://web-mugen.com/)
+ * @license   : The MIT License
+ * @link      : http://web-mugen.com/javascript/jquerydropdownmenuremodel/
+ * @modified  : 2013-04-30 17:05
+ */
+
 (function($){
 
 	$.fn.dropdownMenu = function(option){
 
+		// option
 		var o = $.extend({
 			spd: 200
 		}, option);
@@ -10,8 +22,14 @@
 			$li   = $wrap.find('li'),
 			$ul   = $li.find('ul');
 
+		/* ==============================
+			first ran
+		============================== */
 		$ul.hide();
 
+		/* ==============================
+			events
+		============================== */
 		$li.hover(
 			function(){
 				var $self = $(this);

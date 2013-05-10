@@ -5,7 +5,7 @@
  * @author    : syuji-higa
  * @copyright : Web Mugen (http://web-mugen.com/)
  * @license   : The MIT License
- * @link      : http://web-mugen.com/javascript/jquerydropdownmenuremodel/
+ * @link      : http://web-mugen.com/javascript/jquery.dropdownMenu/
  * @modified  : 2013-04-30 17:05
  */
 

@@ -1,22 +1,22 @@
 /*!
  * jquery.dropdownMenu.js
  *
- * @version   : 1.0.0
+ * @version   : 1.0.1
  * @author    : syuji-higa
- * @copyright : Web Mugen (http://web-mugen.com/)
+ * @copyright : syuji-higa (https://github.com/syuji-higa)
  * @license   : The MIT License
- * @link      : http://web-mugen.com/javascript/jquery.dropdownMenu/
- * @modified  : 2013-04-30 17:05
+ * @link      : http://deom.syuji-higa.com/javascript/jquery.dropdownMenu/sample
+ * @modified  : 2013-08-10 21:00
  */
 
 (function($){
 
-	$.fn.dropdownMenu = function(option){
+	$.fn.dropdownMenu = function(options){
 
-		// option
+		// options
 		var o = $.extend({
 			spd: 200
-		}, option);
+		}, options);
 
 		var $wrap = $(this),
 		    $li   = $wrap.find('li'),
@@ -25,11 +25,13 @@
 		/* ==============================
 			first ran
 		============================== */
+
 		$ul.hide();
 
 		/* ==============================
 			events
 		============================== */
+
 		$li.hover(
 			function(){
 				var $self = $(this);
